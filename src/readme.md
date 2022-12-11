@@ -3,17 +3,17 @@
 1. 8 bits = 1 Byte 大部分喜歡簡寫，小寫 b 和大寫 B
 2. B * 1024 = KB，10 的 3 次方=1000，有時用這個，但實際上是 1024，不是 1000
 3. KB MB GB TB PB EB ZB YB，每個單位都差 2 的 10 次方 = 1024
-4. 毫秒 ms(minisecond)、微秒 us(mu-second)、奈秒 ns(nanosecond)、ps(picosecond)，每個差 2 的 -10 次方
+4. 毫秒 ms(minisecond)、微秒 µs(mu-second)、奈秒 ns(nanosecond)、皮秒 ps(picosecond)、fs、as、zs、ys，每個差 10 的 -3 次方
 ### 二、進制轉換
 1. 常用進位為 2 8 10 16
 2. 非十進位要互轉需先轉成十進位再轉換
 3. 小數轉換
-4. 可參考：http://www.chwa.com.tw/TResource/VS/book1/ch2/2-5.htm
+4. 可參考：[進位教學](http://www.chwa.com.tw/TResource/VS/book1/ch2/2-5.htm)
 ### 三、1和2的補數
-1. https://zh.wikipedia.org/wiki/%E4%BA%8C%E8%A3%9C%E6%95%B8
+1. [2的補數](https://zh.wikipedia.org/wiki/%E4%BA%8C%E8%A3%9C%E6%95%B8)
 2. 大部分的程式語言都用 2 的補數，java 也是
 ### 四、JAVA_HOME 和 CLASSPATH
-https://docs.oracle.com/javase/tutorial/essential/environment/paths.html
+[環境變數](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
 ### 五、java 版本
 + SE EE ME FX
 + jre jdk jvm 區別
