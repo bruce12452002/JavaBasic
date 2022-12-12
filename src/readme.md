@@ -15,11 +15,12 @@
 ### 四、JAVA_HOME 和 CLASSPATH
 [環境變數](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
 ### 五、java 版本
++ James Gosling [JAVA之父](https://zh.wikipedia.org/zh-tw/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%AB%98%E6%96%AF%E6%9E%97)
 + SE EE ME FX
 + jre jdk jvm 區別
 ### 六、main 方法
 > 傳參
-> 註解
+> 註解(單行 多行 文件)
 ### 七、基本型態
 1. 整數 byte short int long：沒有小數點的，預設為 int，佔 8 16 32 64 bits
 > 0b 開頭為 2 進位(JDK7)；0 開頭為 8 進位；0x 開頭為 16 進位；以上不分大小寫
@@ -51,3 +52,4 @@
 5. break continue 標籤
 6. jdk8 foreach Stream.iterate
 7. 九九乘法
+### String
