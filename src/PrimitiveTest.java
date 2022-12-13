@@ -3,7 +3,8 @@ import java.util.stream.Stream;
 public class PrimitiveTest {
     public static void main(String[] args) {
         // byte b = 128;
-        byte b = 126;
+        byte b = 125;
+        b = 126;
         System.out.println(++b); // 127
 
         // 自動轉型 byte -> short -> int -> long -> float -> double，char 只能強轉

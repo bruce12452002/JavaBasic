@@ -7,6 +7,9 @@ public class IfTest {
      * 4. 可以不用花括號，但只能寫一行，也可以和花括號混用
      */
     public static void main(String[] args) {
+        System.out.println("abcde".startsWith("b", 1));
+
+
         boolean test = true;
         if (test) {
             System.out.println("yeah");
@@ -31,7 +34,7 @@ public class IfTest {
         if2(score);
 
 
-        // 三元運算子
+        // 三元運算子，如果只需要 if-else 還可以這樣用
         String result = test ? "yes" : "no";
         System.out.println(result);
         System.out.println(test ? "Y" : "N");
