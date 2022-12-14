@@ -27,24 +27,24 @@ public class SwitchTest {
         // JDK14 可以不寫 break，寫了是多餘的
         // case default 也可以不寫
         switch (c) {
-            case 'a' -> {
-                System.out.println("a");
-                System.out.println("yeah");
-                break;
-            }
-            case 'b' -> System.out.println("b");
-            case 'c' -> System.out.println("c");
-            default -> System.out.println("default");
+//            case 'a' -> {
+//                System.out.println("a");
+//                System.out.println("yeah");
+//                break;
+//            }
+//            case 'b' -> System.out.println("b");
+//            case 'c' -> System.out.println("c");
+//            default -> System.out.println("default");
         }
     }
 
     private static <T> void jdk17(T t) {
         // 判斷型態可以沒有 case，但一定要有 default
-        switch (t) {
-            case String s -> System.out.println("s=" + s);
-            case Double d -> System.out.println("d=" + d);
-            case Integer i -> System.out.println("i=" + i);
-            default -> System.out.println("default");
-        }
+//        switch (t) {
+//            case String s -> System.out.println("s=" + s);
+//            case Double d -> System.out.println("d=" + d);
+//            case Integer i -> System.out.println("i=" + i);
+//            default -> System.out.println("default");
+//        }
     }
 }

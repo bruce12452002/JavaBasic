@@ -14,6 +14,7 @@
 2. 大部分的程式語言都用 2 的補數，java 也是
 ### 四、JAVA_HOME 和 CLASSPATH
 [環境變數](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
+javac.exe java.exe
 ### 五、java 版本
 + James Gosling [JAVA之父](https://zh.wikipedia.org/zh-tw/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%AB%98%E6%96%AF%E6%9E%97)
 + SE EE ME FX
@@ -33,7 +34,8 @@
 > 小數點有誤差，轉成二進位時無法整除
 + 字元 char：用 '' 包起一個字，包括中文，佔 16 bits，跳脫字元 \
 > 範圍為 \u0000~\uFFFF，16 的 4 次方，又等於 2 的 16 次方 = 65536，參考 charmap
-+ 布林 boolean：為是 true 就是 false，佔 1 bit
++ 布林 boolean：不是 true 就是 false，佔 1 bit
++ int 存時間問題 2038
 ### 八、基本型態轉換
 1. byte -> short -> int -> long -> float -> double
 2. int -> byte short char 在範圍裡會自動轉換，否則編譯錯誤
