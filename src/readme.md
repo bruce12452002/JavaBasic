@@ -64,6 +64,7 @@ javac.exe java.exe
 5. break continue 標籤
 6. jdk8 foreach Stream.iterate
 7. 九九乘法
+8. 迴圈練習
 ### 十四、String
 1. 多行(jdk15)
 2. 字串池

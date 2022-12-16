@@ -6,11 +6,16 @@ public class LoopTest {
      * tag
      */
     public static void main(String[] args) {
-        forTest();
+//        forTest();
 //        whileTest();
 //        doWhileTest();
 //        continueBreakTest();
 //        nestedLoop();
+        tag();
+    }
+
+    private static void nineMultiNine() {
+
     }
 
     private static void forTest() {
@@ -72,6 +77,35 @@ public class LoopTest {
             for (var j = 7; j < 10; j++) {
                 System.out.println("i=" + i + ",j=" + j);
             }
+        }
+    }
+
+    private static void tag() {
+        outer:
+        for (var i = 0; i < 3; i++) {
+            inner:
+            for (var j = 7; j < 10; j++) {
+                if (j == 8) {
+                    continue inner;
+//                    continue outer;
+                }
+                System.out.println("i=" + i + ",j=" + j);
+            }
+            if (i == 1) {
+                break outer;
+            }
+        }
+    }
+
+    private static void nineMultiNineSpecial() {
+        for (var i = 1; i <= 9; i += 3) {
+            for (var j = 1; j <= 9; j++) {
+                System.out.printf("%-6s ", i + "x" + j + "=" + i * j);
+                System.out.printf("%-6s ", (i + 1) + "x" + j + "=" + (i + 1) * j);
+                System.out.printf("%-6s ", (i + 2) + "x" + j + "=" + (i + 2) * j);
+                System.out.println();
+            }
+            System.out.println();
         }
     }
 }
