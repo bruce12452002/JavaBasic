@@ -8,13 +8,13 @@ public class NumberSystem {
      * @param system 轉成幾進位的數字
      * @return 轉成 system 進位的值
      */
-    public static String DecToXSystem(int num, int system) {
+    public static String decToXSystem(int num, int system) {
         if (num < 0) throw new RuntimeException("num 不可傳負數");
         int quotient = num / system;
         int remainder = num % system;
 
         if (quotient >= system) {
-            DecToXSystem(quotient, system);
+            decToXSystem(quotient, system);
         }
         if (quotient < system) {
             SB.append(quotient);
@@ -29,7 +29,7 @@ public class NumberSystem {
      * @param system 用幾進位轉成 10 進位的數字
      * @return 10 進位的值
      */
-    public static int XSystemToDec(String numStr, int system) {
+    public static int xSystemToDec(String numStr, int system) {
         if (numStr == null || numStr.isEmpty()) throw new RuntimeException("numStr 不可為空");
         int sum = 0;
         for (int i = 0; i < numStr.length(); i++) {
@@ -47,8 +47,8 @@ public class NumberSystem {
         final int system10 = 78;
         final int system = 4;
 
-        final String result = NumberSystem.DecToXSystem(system10, system);
+        final String result = NumberSystem.decToXSystem(system10, system);
         System.out.println(system10 + "轉成" + system + "進位=" + result);
-        System.out.println(result + "轉成10進位=" + XSystemToDec(result, system));
+        System.out.println(result + "轉成10進位=" + xSystemToDec(result, system));
     }
 }
