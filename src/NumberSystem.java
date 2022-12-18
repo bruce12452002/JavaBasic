@@ -2,7 +2,7 @@ public class NumberSystem {
     private static final StringBuilder SB = new StringBuilder();
 
     /**
-     * 10 進位轉任何進位
+     * 10 進位轉任何進位(10進位以上不支援)
      *
      * @param num    10 進位的數字
      * @param system 轉成幾進位的數字
@@ -23,7 +23,7 @@ public class NumberSystem {
     }
 
     /**
-     * 任何進位轉 10 進位
+     * 任何進位(10進位以上不支援)轉 10 進位
      *
      * @param numStr system 進位的值
      * @param system 用幾進位轉成 10 進位的數字

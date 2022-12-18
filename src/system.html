@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<script>
+			let exe = () => {
+				if (SB != '') SB = '';
+				let system10 = document.getElementById('num').value;
+				let system = document.getElementById('system').value;
+				alert(system10);
+				alert(system);
+				const result = decToXSystem(system10, system);
+				alert(result);
+				alert(system);
+				const result2 = xSystemToDec(result, system);
+				alert(system10 + "轉成" + system + "進位=" + result + '\n' + result + "轉成10進位=" + result2);
+			}
+			
+			let transfor = () => {
+				if (SB != '') SB = '';
+				let num = document.getElementById('num2').value;
+				let system = document.getElementById('system2').value;
+				const result = xSystemToDec(num, system);
+				alert(num + "轉成10進位=" + result);
+			}
+			
+			let SB = '';
+
+			/*
+			 * 10 進位轉任何進位(10進位以上不支援)
+			 *
+			 * @param num    10 進位的數字
+			 * @param system 轉成幾進位的數字
+			 * @return 轉成 system 進位的值
+			 */
+			function decToXSystem(num, system) {
+				if (num < 0) alert("num 不可傳負數");
+				let quotient = parseInt(num / system);
+				let remainder = num % system;
+
+				if (quotient >= system) {
+					decToXSystem(quotient, system);
+				}
+				if (quotient < system) {
+					SB += quotient;
+				}
+				
+				return SB += remainder;
+			}
+
+			/*
+			 * 任何進位(10進位以上不支援)轉 10 進位
+			 *
+			 * @param numStr system 進位的值
+			 * @param system 用幾進位轉成 10 進位的數字
+			 * @return 10 進位的值
+			 */
+			function xSystemToDec(numStr, system) {
+				numStr += '';
+				let sum = 0;
+				for (let i = 0; i < numStr.length; i++) {
+					let n = numStr.substring(i, i + 1);
+
+					if ("0" == n) {
+						continue;
+					}
+					let r = Math.pow(system, numStr.length - i - 1);
+					sum += r * parseInt(n);
+				}
+				return sum;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h3>10 進位轉任何進位</h3>
+		10進位數字 <input id="num" />
+		轉幾進位 <input id="system" type="number" />
+		<input onclick="exe()" type="button" value="執行" /> 
+		<br />
+		<br />
+		<br />
+		<h3>任何進位轉 10 進位</h3>
+		x 進位數字 <input id="num2" />
+		數字是幾進位 <input id="system2" type="number" />
+		<input onclick="transfor()" type="button" value="執行" /> 
+	</body>
+</html>
+
