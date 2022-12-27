@@ -5,7 +5,12 @@ public class ScannerTest {
         Scanner scanner = new Scanner(System.in);
         // scanner.useDelimiter("\n"); // 預設是空格
         while (scanner.hasNext()) { // scanner.hasNextInt()
-            System.out.println(scanner.next());
+            String next = scanner.next();
+            if ("exit".equals(next)) {
+                break;
+            }
+            System.out.println(next);
         }
+        scanner.close();
     }
 }
