@@ -3,9 +3,9 @@ public class IfExam {
         // 1. 輸入一個整數，判斷是否為奇數，是就顯示奇數；不是顯示偶數
         int i = 50;
         if (i % 2 == 0) {
-            System.out.println("奇數");
-        } else {
             System.out.println("偶數");
+        } else {
+            System.out.println("奇數");
         }
 
 
