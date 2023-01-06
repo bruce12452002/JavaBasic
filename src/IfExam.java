@@ -39,6 +39,7 @@ public class IfExam {
                 leap = false;
             }
 
+            // year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
             if (leap) {
                 System.out.println(29);
             } else {
