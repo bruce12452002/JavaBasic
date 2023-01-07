@@ -2,6 +2,7 @@ public class SwitchTest {
     /**
      * switch case break default，除了 switch 以外，其他都可以不寫
      * 只支援 整數、char、字串(jdk7)
+     * case 用「|」可判斷多個值，但不支援 > <
      */
     public static void main(String[] args) {
         String str = "A";
