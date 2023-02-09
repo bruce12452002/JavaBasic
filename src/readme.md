@@ -36,6 +36,8 @@ javac.exe java.exe
 > 範圍為 \u0000~\uFFFF，16 的 4 次方，又等於 2 的 16 次方 = 65536，參考 charmap
 + 布林 boolean：不是 true 就是 false，佔 1 bit
 + int 存時間問題 2038
++ 運算元優先級
+> https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
 ### 八、基本型態轉換
 1. byte -> short -> int -> long -> float -> double
 2. int -> byte short char 在範圍裡會自動轉換，否則編譯錯誤
