@@ -72,4 +72,3 @@ javac.exe java.exe
 2. 字串池
 3. 常用方法
 ### 十五、Scanner
-### 十六、Console
