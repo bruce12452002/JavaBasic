@@ -1,4 +1,6 @@
-public class LoopPractice {
+package lesson3.practice;
+
+public class Exam {
     /*
      * *****
      * *****

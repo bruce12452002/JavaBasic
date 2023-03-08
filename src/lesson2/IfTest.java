@@ -1,3 +1,5 @@
+package lesson2;
+
 public class IfTest {
     public static void main(String[] args) {
 //        final int score = 85;

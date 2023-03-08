@@ -1,8 +1,17 @@
+package lesson1;
+
 import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class StringTest {
     public static void main(String[] args) {
+        String str = new String("hi!");
+        str = str.concat("abc");
+        System.out.println(str);
+
+        String str2 = "hi!" + "abc";
+        System.out.println(str2);
+
 //        common();
 //        escape();
 //        pair();

@@ -40,7 +40,7 @@ javac.exe java.exe
 > https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
 ### 八、基本型態轉換
 1. byte -> short -> int -> long -> float -> double
-2. int -> byte short char 在範圍裡會自動轉換，否則編譯錯誤
+2. 小 -> 大 為隱式轉換； 大 -> 小 需要強制轉換
 ### 九、var (JDK10)
 1. 只能是區域變數且一定要初始化
 2. 不能是參數和回傳值
@@ -60,7 +60,7 @@ javac.exe java.exe
 ### 十二、陣列
 ### 十三、迴圈
 1. 無限迴圈
-2. for for:
+2. for
 3. while
 4. do while
 5. break continue 標籤
