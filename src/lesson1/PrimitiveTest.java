@@ -80,7 +80,10 @@ public class PrimitiveTest {
         double underLine4 = 10__0000__0000.0000_01;
 
         System.out.println("Wrapper 類別");
-        Byte bb = 5;
+        // autoBoxing/autoUnboxing
+        Byte bb = 5; // autoBoxing
+        int c = bb + 1; // autoUnboxing
+
         Short ss = 5;
         Integer ii = 5;
         Long ll = 5L;

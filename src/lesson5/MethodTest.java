@@ -20,4 +20,6 @@ public class MethodTest {
         return Arrays.stream(i).boxed().mapToInt(t -> t).summaryStatistics().getSum();
     }
 
+    // recursive
+    // with generic
 }
