@@ -1,3 +1,5 @@
+package lesson1;
+
 public class IncrementTest {
     public static void main(String[] args) {
         int x = 1;

@@ -1,3 +1,5 @@
+package lesson3;
+
 public class LoopTest {
     /**
      * 三種迴圈都可以不寫花括號，不寫花括號只能寫一行
@@ -6,16 +8,12 @@ public class LoopTest {
      * tag
      */
     public static void main(String[] args) {
-//        forTest();
+        forTest();
 //        whileTest();
 //        doWhileTest();
 //        continueBreakTest();
 //        nestedLoop();
-        tag();
-    }
-
-    private static void nineMultiNine() {
-
+//        tag();
     }
 
     private static void forTest() {
@@ -97,15 +95,7 @@ public class LoopTest {
         }
     }
 
-    private static void nineMultiNineSpecial() {
-        for (var i = 1; i <= 9; i += 3) {
-            for (var j = 1; j <= 9; j++) {
-                System.out.printf("%-6s ", i + "x" + j + "=" + i * j);
-                System.out.printf("%-6s ", (i + 1) + "x" + j + "=" + (i + 1) * j);
-                System.out.printf("%-6s ", (i + 2) + "x" + j + "=" + (i + 2) * j);
-                System.out.println();
-            }
-            System.out.println();
-        }
+    private static void nineMultiNine() {
+
     }
 }

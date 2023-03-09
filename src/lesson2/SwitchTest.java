@@ -1,3 +1,5 @@
+package lesson2;
+
 public class SwitchTest {
     /**
      * switch case break default，除了 switch 以外，其他都可以不寫
