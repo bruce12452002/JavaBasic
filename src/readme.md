@@ -71,4 +71,7 @@ javac.exe java.exe
 1. 多行(jdk15)
 2. 字串池
 3. 常用方法
-### 十五、Scanner
+### 十五、和使用者互動
+1. Scanner
+2. Console
+### 十六、常用類別

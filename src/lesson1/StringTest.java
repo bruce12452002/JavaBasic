@@ -61,7 +61,7 @@ public class StringTest {
      * subSequence
      * substring  v
      * <p>
-     * toLowerase  v
+     * toLowercase  v
      * toUpperCase  v
      */
     private static void pair() {

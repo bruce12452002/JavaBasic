@@ -1,6 +1,6 @@
 package lesson2.practice;
 
-public class Exam {
+public class L2Exam {
     public static void main(String[] args) {
         // 1. 輸入一個整數，判斷是否為奇數，是就顯示奇數；不是顯示偶數
 

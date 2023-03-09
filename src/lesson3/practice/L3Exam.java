@@ -1,6 +1,6 @@
 package lesson3.practice;
 
-public class Exam {
+public class L3Exam {
     /*
      * *****
      * *****

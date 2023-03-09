@@ -20,6 +20,9 @@ public class MethodTest {
         return Arrays.stream(i).boxed().mapToInt(t -> t).summaryStatistics().getSum();
     }
 
+
+    // public private protected 空，四種修飾子
     // recursive
     // with generic
+
 }
