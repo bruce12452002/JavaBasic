@@ -5,10 +5,12 @@ package lesson6;
  */
 public class StringBuilderTest {
     public static void main(String[] args) {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("aaa").append("bbb").append("ccc");
-//        System.out.println(sb.toString());
-        common();
+        // 只有 append 時，和 String 結果是一樣的，因為 JVM 優化成 StringBuilder；但在迴圈裡就不會優化了
+        StringBuilder sb = new StringBuilder(); // View -> Show Bytecode，注意，必須先有 class
+        sb.append("aaa").append("bbb").append("ccc");
+        System.out.println(sb.toString());
+
+//        common();
     }
 
     /**
