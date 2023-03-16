@@ -1,4 +1,4 @@
-package lesson8;
+package lesson7;
 
 import java.util.*;
 import java.util.function.Function;
@@ -35,12 +35,13 @@ public class MapInit {
         System.out.println(map);
     }
 
-//    private static void initMap3() {
-//        System.out.println("initMap3");
-//        List<String> list = Arrays.asList("aa", "bb"); // 元素長度不可變
-//        // List<String> list = Arrays.asList(new String[]{"aa", "bb"});
-//        System.out.println(list);
-//    }
+    private static void initMap3() {
+        System.out.println("initMap3");
+        List<String> list = Arrays.asList("aa", "bb"); // 元素長度不可變
+
+        Map<String, String> map = list.stream().collect(Collectors.toMap(Function.identity(), Function.identity()));
+        System.out.println(map);
+    }
 
     private static void initMap4() {
         System.out.println("initMap4");
