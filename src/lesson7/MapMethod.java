@@ -13,6 +13,7 @@ public class MapMethod {
         System.out.println(map.get("a"));
         System.out.println(map.getOrDefault("b", 8));
         System.out.println(map.size());
+        System.out.println(map.isEmpty());
 
         map.put("a", 7); // 一樣的 key 為修改
         map.putIfAbsent("a", 8); // key 沒有才增加

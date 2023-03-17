@@ -9,6 +9,8 @@ public class RandomTest {
 
         int y = (int) (Math.random() * 10); // 0~9
         System.out.println(y);
+
+//        utilRandom();
     }
 
     private static void utilRandom() {

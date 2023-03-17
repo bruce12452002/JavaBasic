@@ -1,9 +1,8 @@
 package lesson7;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ListMethod {
     public static void main(String[] args) {
@@ -14,7 +13,17 @@ public class ListMethod {
         list1.add("a");
         list1.add("b");
         list1.add("c");
+
+        Set<String> s = new HashSet<>();
+        s.add("aa");
+        list1.addAll(s); // 在最後插入元素
+//        list1.addAll(1, s); // 在指定的索引插入元素
         System.out.println(list1.get(0));
+//        list1.size();
+//        list1.contains("");
+//        list1.containsAll(Collection);
+//        list1.isEmpty();
+
 //        Object[] objects = list1.toArray();
         displayList(list1);
 
@@ -37,6 +46,17 @@ public class ListMethod {
         list1.remove(0);
         displayList(list1);
 
+        System.out.println("========== removeAll removeIf ==========");
+        List<String> list2 = Stream.of("a", "b", "c", "c", "b", "a").collect(Collectors.toList());
+        list2.removeIf(ss -> ss.equals("c"));
+        System.out.println(list2);
+
+        List<String> list3 = new ArrayList<>() {{
+            add("a");
+        }};
+        list2.removeAll(list3);
+        System.out.println(list2);
+
         System.out.println("========== remove all ==> clear ==========");
         list1.clear();
         displayList(list1);
@@ -49,6 +69,13 @@ public class ListMethod {
         Collections.sort(list1); // ls 元素內容不可變，不能排序、反轉
         Collections.reverse(list1); // ls 元素內容不可變，不能排序、反轉
         System.out.println(ls);
+
+//        ls.indexOf();
+//        ls.lastIndexOf();
+//        ls.retainAll(Collection) // 保留兩個 Collection 相同的元素
+//        ls.iterator()
+//        ls.listIterator();
+//        ls.subList();
     }
 
     private static void displayList(List<? extends CharSequence> list) {

@@ -2,7 +2,6 @@ package lesson7;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class SetMethod {
     public static void main(String[] args) {
@@ -35,6 +34,19 @@ public class SetMethod {
         System.out.println("========== contains ==========");
         Set<Integer> s = Set.of(1, 2, 3, 4, 5);
         System.out.println(s.contains(3));
+
+        System.out.println("========== other ==========");
+//        set.size();
+//        set.addAll();
+//        set.iterator();
+//        set.contains();
+//        set.containsAll();
+//        set.isEmpty();
+//        set.removeIf();
+//        set.removeAll();
+//        set.retainAll();
+
+        System.out.println("========== NavigableSet ==========");
     }
 
     private static void displaySet(Set<? extends CharSequence> set) {
