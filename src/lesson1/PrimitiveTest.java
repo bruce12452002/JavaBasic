@@ -11,9 +11,13 @@ public class PrimitiveTest {
         hi = 5;
         System.out.println(hi);
 
-        int qoo, oqq= 7; // 宣告多個變數
+        int qoo, oqq = 7; // 宣告多個變數
 //        System.out.println(qoo); // 區域變數必需給值
         System.out.println(oqq);
+
+        int aaa, bbb, ccc;
+        aaa = bbb = ccc = 10; // 一次賦多個值
+        System.out.println(aaa + bbb + ccc);
 
         System.out.println("範圍");
         // byte 範圍為 -128~127
@@ -99,15 +103,15 @@ public class PrimitiveTest {
 
         System.out.println("var");
         var i = 8;
-        System.out.println(((Object)i).getClass().getSimpleName());
+        System.out.println(((Object) i).getClass().getSimpleName());
 
         var d = 5.5;
-        System.out.println(((Object)d).getClass().getSimpleName());
+        System.out.println(((Object) d).getClass().getSimpleName());
 
         var c1 = '#';
-        System.out.println(((Object)c1).getClass().getSimpleName());
+        System.out.println(((Object) c1).getClass().getSimpleName());
 
         var boo = false;
-        System.out.println(((Object)boo).getClass().getSimpleName());
+        System.out.println(((Object) boo).getClass().getSimpleName());
     }
 }
