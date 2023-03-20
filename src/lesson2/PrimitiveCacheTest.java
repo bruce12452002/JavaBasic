@@ -16,5 +16,16 @@ public class PrimitiveCacheTest {
         Integer i5 = null;
         Integer i6 = 50;
 //        System.out.println(i5.intValue() == i6);
+
+        // int 沒有 null
+        // System.out.println(null == 1); // 編譯錯誤
+
+        xxx(null, 8);
+    }
+
+    private static void xxx(Integer i, int j) {
+        if (i.intValue() == j) {
+
+        }
     }
 }
