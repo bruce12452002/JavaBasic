@@ -6,6 +6,11 @@ public class MethodTest {
     public static void main(String[] args) {
         System.out.println(new MethodTest().m3());
         System.out.println(new MethodTest().m3(1, 2, 3));
+
+        // recursive
+        MethodTest m = new MethodTest();
+        m.getTotal(100);
+        System.out.println(m.total);
     }
 
     private static String m1(int i, int j) {
@@ -21,8 +26,18 @@ public class MethodTest {
     }
 
 
-    // public private protected 空，四種修飾子
-    // recursive
-    // with generic
+    int total;
 
+    /**
+     * recursive
+     */
+    private void getTotal(int i) {
+        if (i == 0) {
+            return;
+        }
+        total += i--;
+        getTotal(i);
+    }
+
+    // with generic
 }
