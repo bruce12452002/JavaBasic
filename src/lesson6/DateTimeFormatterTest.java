@@ -10,8 +10,8 @@ import java.time.format.DateTimeFormatter;
 public class DateTimeFormatterTest {
     public static void main(String[] args) {
         DateTimeFormatter isoDateTime = DateTimeFormatter.ISO_DATE_TIME;
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime.parse("2000-10-10 10:10:10", dateTimeFormatter);
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        LocalDateTime.parse("2000-10-10 10:10:10.999", dateTimeFormatter);
 
         /**
          * X
