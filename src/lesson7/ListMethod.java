@@ -13,6 +13,7 @@ public class ListMethod {
         list1.add("a");
         list1.add("b");
         list1.add("c");
+        onesIterator(list1);
 
         Set<String> s = new HashSet<>();
         s.add("aa");
@@ -83,9 +84,22 @@ public class ListMethod {
             System.out.println(i);
         }
 
-//        Iterator<? extends CharSequence> iterator = list.iterator();
-//        while (iterator.hasNext()) {
-//            System.out.println(iterator.next());
-//        }
+        Iterator<? extends CharSequence> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+
+    private static void onesIterator(List<String> list) {
+        System.out.println("ones");
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        System.out.println("=====");
+        while (iterator.hasNext()) { // 前面已用完，不會再進來了，但如果是再用 list.iterator() 是可以的
+            System.out.println(iterator.next());
+        }
+        System.out.println("=====");
     }
 }

@@ -10,10 +10,11 @@ public class ArrayTest {
         String[] s2 = new String[]{"a", "b", "c"};
         String[] s3 = {"a", "b", "c"};
 
+//        fillArray();
 //        sort();
 //        passByReference();
 //        passByValue();
-        dim2();
+//        dim2();
     }
 
     private static void sort() {
@@ -34,9 +35,25 @@ public class ArrayTest {
 
     private static void passByValue() {
         int[] arr = {9, 5, 2, 7};
-        int[] arr2 = Arrays.copyOf(arr, arr.length);
+        int[] arr2 = Arrays.copyOf(arr, arr.length); // 從索引 0 開始
+        int[] arr3 = Arrays.copyOfRange(arr, 0, arr.length); // 可以自訂起始索引，0~資料長度就等同 copyOf
+//        Integer[] iarr = new Integer[]{1, 2, 3};
+//        Number[] arr3 = Arrays.copyOf(iarr, arr.length, Number[].class); // 如果陣列型態不想和來源一樣，可用第三個參數
+
+//        int[] systemArr = new int[arr.length];
+        /**
+         * src：     來源陣列
+         * srcPos：  來源陣列從索引多少開始複製
+         * dest：    目的陣列
+         * destPos： 目的陣列從索引多少開始
+         * length：  複製幾個
+         */
+//        System.arraycopy(arr, 0, systemArr, 0, arr.length);
+
         arr[0] = 999;
-        System.out.println(arr2[0]);
+        for (int i : arr2) {
+            System.out.println(i);
+        }
     }
 
     private static void dim2() {
@@ -67,5 +84,12 @@ public class ArrayTest {
 
         // 方法三
         Arrays.stream(arr2).forEach(a -> System.out.println(Arrays.toString(a)));
+    }
+
+    private static void fillArray() {
+        // int 預設 0； Integer 預設 null
+        int[] arr = new int[5];
+        Arrays.fill(arr, 10);
+        Arrays.stream(arr).forEach(System.out::println);
     }
 }
