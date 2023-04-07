@@ -11,7 +11,7 @@ public class ArrayTest {
         String[] s3 = {"a", "b", "c"};
 
 //        fillArray();
-//        sort();
+        sort();
 //        passByReference();
 //        passByValue();
 //        dim2();
@@ -23,7 +23,7 @@ public class ArrayTest {
         Arrays.stream(arr).forEach(System.out::print);
         System.out.println();
         System.out.println(Arrays.binarySearch(arr, 5));
-        System.out.println(Arrays.binarySearch(arr, 45)); // 找不到回傳陣列長度加 1 * -1
+        System.out.println(Arrays.binarySearch(arr, 45)); // 找不到回傳 (陣列長度 + 1) * -1
     }
 
     private static void passByReference() {
