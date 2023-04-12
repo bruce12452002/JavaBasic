@@ -3,18 +3,34 @@ package lesson4;
 import java.util.Arrays;
 
 public class ArrayTest {
-    public static void main(String[] args) {
+    /**
+     * 三種宣告陣列的方式
+     */
+    private void declareArray() {
+        // 第一種
         String[] s1 = new String[5];
         s1[0] = "a";
 
+        // 第二種
         String[] s2 = new String[]{"a", "b", "c"};
-        String[] s3 = {"a", "b", "c"};
 
+        // 第三種
+        String[] s3 = {"a", "b", "c"}; // 和第二種一樣，但較簡潔，所以第二種很少人用
+
+        setArray(s3); // ... 就是陣列
+    }
+
+    private void setArray(String... arr) {
+    }
+//    private void setArray(String[] arr) {
+//    }
+
+    public static void main(String[] args) {
 //        fillArray();
-        sort();
+//        sort();
 //        passByReference();
 //        passByValue();
-//        dim2();
+        dim2();
     }
 
     private static void sort() {
@@ -23,7 +39,7 @@ public class ArrayTest {
         Arrays.stream(arr).forEach(System.out::print);
         System.out.println();
         System.out.println(Arrays.binarySearch(arr, 5));
-        System.out.println(Arrays.binarySearch(arr, 45)); // 找不到回傳 (陣列長度 + 1) * -1
+        System.out.println(Arrays.binarySearch(arr, 45)); // 找不到回傳陣列長度加 1 * -1
     }
 
     private static void passByReference() {
@@ -83,6 +99,9 @@ public class ArrayTest {
         }
 
         // 方法三
+        System.out.println(Arrays.deepToString(arr2));
+
+        // 方法四
         Arrays.stream(arr2).forEach(a -> System.out.println(Arrays.toString(a)));
     }
 

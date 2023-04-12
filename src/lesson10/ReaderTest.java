@@ -9,24 +9,42 @@ public class ReaderTest {
     public static void main(String[] args) throws IOException {
 //        FileReader reader = new FileReader("src/ocpjp.txt");
         FileReader reader = new FileReader(new File("src/ocpjp.txt"));
-//        basicRead(reader);
-        readChar(reader);
+//        read0Param(reader);
+        read1Param(reader);
+//        read3Param(reader);
 //        withBufferedReader(reader);
 
         reader.close();
     }
 
-    private static void basicRead(FileReader reader) throws IOException {
+    private static void read0Param(FileReader reader) throws IOException {
         int data;
         while ((data = reader.read()) != -1) {
             System.out.print((char) data);
         }
     }
 
-    private static void readChar(FileReader reader) throws IOException {
+    private static void read1Param(FileReader reader) throws IOException {
         char[] buffer = new char[10];
-        while (reader.read(buffer) != -1) {
-            System.out.print(buffer);
+//        while (reader.read(buffer) != -1) { // 有可能會有多餘的
+//            System.out.print(buffer);
+//        }
+        System.out.println("====================");
+        int len;
+        while ((len = reader.read(buffer)) != -1) { // 使用 len 來接長度可解決多餘的問題
+            for (var i = 0; i < len; i++) {
+                System.out.print(buffer[i]);
+            }
+        }
+    }
+
+    private static void read3Param(FileReader reader) throws IOException {
+        char[] buffer = new char[10];
+        int len;
+        while ((len = reader.read(buffer, 0, buffer.length)) != -1) {
+            for (var i = 0; i < len; i++) {
+                System.out.print(buffer[i]);
+            }
         }
     }
 
