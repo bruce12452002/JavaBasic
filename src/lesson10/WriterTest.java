@@ -1,5 +1,6 @@
 package lesson10;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,10 +9,9 @@ import java.util.Objects;
 public class WriterTest {
     public static void main(String[] args) throws IOException {
 //        basicWrite();
-        writeBuffer();
+//        writeBuffer();
+        withBufferedWriter(new FileWriter("testWriter.txt"));
 //        tryWithResource();
-
-
     }
 
     private static void basicWrite() throws IOException {
@@ -59,5 +59,13 @@ public class WriterTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void withBufferedWriter(FileWriter writer) throws IOException {
+        BufferedWriter br = new BufferedWriter(writer);
+        br.write("test");
+        br.newLine();
+        br.write("yeah");
+        br.close();
     }
 }

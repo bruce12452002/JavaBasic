@@ -41,6 +41,12 @@ public class ReaderTest {
     private static void read3Param(FileReader reader) throws IOException {
         char[] buffer = new char[10];
         int len;
+        /**
+         *  read(buffer, 0, buffer.length)：將 0 ~ 陣列長度寫到 buffer 裡
+         *  read(buffer, 0, 3)：將 [0 ~ 3) 寫到 buffer 裡，全部都會讀到，只不過只用 3 格陣列
+         *  read(buffer, 3, 5)：將 [3 ~ 5) 寫到 buffer 裡，但 012 會讀到，讀到的是 char 的預設值 \u0000，
+         *  之後讀到的 012 字元也會被 \u0000 覆蓋掉
+         */
         while ((len = reader.read(buffer, 0, buffer.length)) != -1) {
             for (var i = 0; i < len; i++) {
                 System.out.print(buffer[i]);

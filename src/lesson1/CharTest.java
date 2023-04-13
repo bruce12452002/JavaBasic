@@ -5,7 +5,7 @@ public class CharTest {
      * 多行註解
      */
     // 單行註解
-    // C:\Users\user \u會報錯
+    // C:\Users/user 會報錯
     public static void main(String[] args) {
         char c0 = 'A';
         char c1 = '\\';
