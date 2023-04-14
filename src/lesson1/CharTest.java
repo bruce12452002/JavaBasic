@@ -5,7 +5,7 @@ public class CharTest {
      * 多行註解
      */
     // 單行註解
-    // C:\Users/user 會報錯
+    // C:\Users/user 反斜會報錯
     public static void main(String[] args) {
         char c0 = 'A';
         char c1 = '\\';
@@ -16,5 +16,6 @@ public class CharTest {
         System.out.println(c1);
         System.out.println(c2);
         System.out.println(c3);
+        System.out.println((char) 65);
     }
 }
