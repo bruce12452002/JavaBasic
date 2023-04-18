@@ -10,16 +10,18 @@ import java.util.zip.ZipInputStream;
 
 public class ZipInputStreamTest {
     public static void main(String[] args) throws IOException {
-
-        File file = new File("testZip.zip");
-
+        final File file = new File("testZip.zip");
 
         try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(file));
              ZipFile zipFile = new ZipFile(file)) {
 
             ZipEntry entry;
             while ((entry = zipIn.getNextEntry()) != null) {
-                System.out.println("檔名是=" + entry.getName());
+                if (entry.isDirectory()) {
+                    continue;
+                } else {
+                    System.out.println("檔名是=" + entry.getName());
+                }
 
                 InputStream is = zipFile.getInputStream(entry);
                 int len;

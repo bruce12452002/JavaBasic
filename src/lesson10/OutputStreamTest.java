@@ -2,6 +2,7 @@ package lesson10;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Objects;
 
@@ -12,17 +13,15 @@ public class OutputStreamTest {
     }
 
     private static void basicWrite() throws IOException {
-        OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream("testWriter.txt"));
-        writer.write("test\nwriter\nyeah"); // int String char[] 都可以
-        writer.write(65); // int String char[] 都可以，int 會自動轉 Unicode
-        writer.write("test\nwriter\nyeah".toCharArray()); // int String char[] 都可以
+        OutputStream writer = new FileOutputStream("testWriter.txt");
+        writer.write(65);
         writer.flush();
         writer.close();
     }
 
     private static void writeBuffer() throws IOException {
         final String data = "https://education.oracle.com/java-se-8-programmer-ii/pexam_1Z0-809";
-        OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream("testWriter.txt"));
+        OutputStream writer = new FileOutputStream("testWriter.txt");
 
         if (Objects.isNull(data) || data.length() == 0) return;
 
@@ -32,8 +31,8 @@ public class OutputStreamTest {
             int len = i + getLetterCount <= data.length() ? i - (i / getLetterCount - 1) * getLetterCount
                     : data.length() % getLetterCount;
 //            System.out.println(len);
-//            writer.write(data, i, len);
-            writer.write(data.toCharArray(), i, len); // char 陣列和 String 做法一樣
+//            writer.write(data.getBytes());
+            writer.write(data.getBytes(), i, len);
             i += getLetterCount;
         } while (i < data.length());
 

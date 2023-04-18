@@ -3,24 +3,25 @@ package lesson10;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class InputStreamTest {
     public static void main(String[] args) throws IOException {
-        FileInputStream in = new FileInputStream(new File("src/ocpjp.txt"));
+        InputStream in = new FileInputStream(new File("src/ocpjp.txt"));
 //        read0Param(in);
 //        read1Param(in);
         read3Param(in);
         in.close();
     }
 
-    private static void read0Param(FileInputStream in) throws IOException {
+    private static void read0Param(InputStream in) throws IOException {
         int data;
         while ((data = in.read()) != -1) {
             System.out.print((char) data);
         }
     }
 
-    private static void read1Param(FileInputStream in) throws IOException {
+    private static void read1Param(InputStream in) throws IOException {
         byte[] buffer = new byte[10];
 //        while (in.read(buffer) != -1) { // 有可能會有多餘的
 //            for (var i = 0; i < buffer.length; i++) {
@@ -36,7 +37,7 @@ public class InputStreamTest {
         }
     }
 
-    private static void read3Param(FileInputStream in) throws IOException {
+    private static void read3Param(InputStream in) throws IOException {
         byte[] buffer = new byte[10];
         int len;
         /**
