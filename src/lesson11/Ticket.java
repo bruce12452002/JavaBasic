@@ -36,6 +36,7 @@ public class Ticket implements Runnable {
     }
 
     private static void sameTicket() {
+        // 實際上，在 run 裡的程式碼，sleep() 會發現有問題，因為有可能同一個時間點，多個執行緒去拿到 ticket 且都 > 0，但 ticket-- 時就會多了
         Ticket r = new Ticket();
         Thread t1 = new Thread(r);
         Thread t2 = new Thread(r);
