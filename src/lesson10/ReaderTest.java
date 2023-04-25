@@ -18,8 +18,18 @@ public class ReaderTest {
     }
 
     private static void read0Param(FileReader reader) throws IOException {
-        int data;
-        while ((data = reader.read()) != -1) {
+        // 方法一
+//        int data;
+//        while ((data = reader.read()) != -1) {
+//            System.out.print((char) data);
+//        }
+
+        // 方法二
+        while (reader.ready()) { // ready() 表示已準備好，可以開始讀取了
+            int data = reader.read();
+            if (data == -1) {
+                break;
+            }
             System.out.print((char) data);
         }
     }
@@ -30,12 +40,22 @@ public class ReaderTest {
 //            System.out.print(buffer);
 //        }
         System.out.println("====================");
+        // 方法一
         int len;
         while ((len = reader.read(buffer)) != -1) { // 使用 len 來接長度可解決多餘的問題
             for (var i = 0; i < len; i++) {
                 System.out.print(buffer[i]);
             }
         }
+
+        // 方法二
+//        while (reader.ready()) {
+//            int data = reader.read(buffer);
+//            if (data == -1) {
+//                break;
+//            }
+//            System.out.print(buffer);
+//        }
     }
 
     private static void read3Param(FileReader reader) throws IOException {

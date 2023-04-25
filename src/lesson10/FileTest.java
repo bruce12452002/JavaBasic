@@ -8,6 +8,7 @@ public class FileTest {
 //        System.out.println(System.getProperty("user.dir"));
 //        System.out.println(new File(".").getAbsolutePath());
 
+        // new File 路徑可不存在
         File file = new File("src/ocpjp.txt");
         File dir = new File("src");
         System.out.println(file.isFile());
