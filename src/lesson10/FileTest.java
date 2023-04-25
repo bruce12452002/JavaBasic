@@ -19,6 +19,7 @@ public class FileTest {
         System.out.println(file.canWrite());
         System.out.println(file.canExecute());
         System.out.println(file.length());
+        file.toPath(); // 轉成 Path
 
 
 
