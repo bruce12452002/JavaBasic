@@ -1,15 +1,14 @@
 package lesson10.paths_and_files;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
+import java.util.List;
 
 public class FilesTest {
     public static void main(String[] args) {
 //        commonMethod();
-        createDeleteMethod();
+//        createDeleteMethod();
+        listDir();
     }
 
     private static void commonMethod() {
@@ -51,6 +50,21 @@ public class FilesTest {
             Files.deleteIfExists(dir); // deleteIfExists 判斷存存才會刪除，這可以避免檔案不存在和刪除的目錄不是空的錯誤
             Files.deleteIfExists(Paths.get("src/ooo/"));
             System.out.println("finish");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void listDir() {
+        Path path = Paths.get("/Users/bruce/JavaBasic");
+        try (
+                // 只有當前層
+//                DirectoryStream<Path> dir = Files.newDirectoryStream(path, p -> true)
+//                DirectoryStream<Path> dir = Files.newDirectoryStream(path, p -> !p.getFileName().toString().startsWith("."))
+//                DirectoryStream<Path> dir = Files.newDirectoryStream(path, "*")
+                DirectoryStream<Path> dir = Files.newDirectoryStream(path, "*.iml")
+        ) {
+            dir.forEach(d -> System.out.println(d.getFileName()));
         } catch (IOException e) {
             e.printStackTrace();
         }
