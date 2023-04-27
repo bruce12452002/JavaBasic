@@ -1,4 +1,4 @@
-package lesson10.advanced.serializable;
+package lesson10.advance.serializable;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

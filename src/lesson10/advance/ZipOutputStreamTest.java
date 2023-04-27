@@ -1,4 +1,4 @@
-package lesson10.advanced;
+package lesson10.advance;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
