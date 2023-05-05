@@ -9,7 +9,10 @@ import java.util.concurrent.*;
  */
 public class CallableTest {
     public static void main(String[] args) {
-        try (ExecutorService es = Executors.newSingleThreadExecutor()) {
+        // java 19，ExecutorService 繼承了 AutoCloseable
+//        try (ExecutorService es = Executors.newSingleThreadExecutor()) {
+        try {
+            ExecutorService es = Executors.newSingleThreadExecutor();
             Callable<String> callable = () -> "yeah!";
             Future<String> future = es.submit(callable);
 

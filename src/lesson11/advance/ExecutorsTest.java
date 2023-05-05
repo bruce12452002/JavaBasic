@@ -77,7 +77,7 @@ public class ExecutorsTest {
             });
         }
         es.shutdown();
-        es.close();
+        // es.close(); // java 19，ExecutorService 繼承了 AutoCloseable
 
         schedule();
     }
@@ -111,8 +111,9 @@ public class ExecutorsTest {
             e.printStackTrace();
         }
 
-        ses.close();
-        sess.close();
-        seas.close();
+        // java 19，ExecutorService 繼承了 AutoCloseable
+//        ses.close();
+//        sess.close();
+//        seas.close();
     }
 }

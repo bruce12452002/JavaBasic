@@ -47,6 +47,6 @@ public class SemaphoreTest {
             es.execute(runnable);
         }
         es.shutdown();
-        es.close();
+        // es.close(); // java 19，ExecutorService 繼承了 AutoCloseable
     }
 }
