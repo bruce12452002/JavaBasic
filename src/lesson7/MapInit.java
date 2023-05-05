@@ -10,10 +10,11 @@ public class MapInit {
 //        initMap1();
 //        initMap2();
 //        initMap3();
-        initMap4();
+//        initMap4();
 //        initMap5();
 //        initMap6();
 //        initMap7();
+        initMap8();
     }
 
     private static void initMap1() {
@@ -88,5 +89,51 @@ public class MapInit {
             map.put(list.get(i), i);
         }
         System.out.println(map);
+    }
+
+    private static void initMap8() {
+        Map<Employee.Gender, String> map = Employee.getPersons().stream()
+                .collect(Collectors.toMap(
+                        Employee::getGender,
+                        Employee::getName,
+                        (oldV, newV) -> String.join(", ", oldV, newV), // KEY 衝突會用到
+                        TreeMap::new
+                ));
+        System.out.println(map);
+    }
+
+    private static class Employee {
+        public static enum Gender {
+            MALE, FEMALE
+        }
+
+        private long id;
+        private String name;
+        private Gender gender;
+
+        public Employee(long id, String name, Gender gender) {
+            this.id = id;
+            this.name = name;
+            this.gender = gender;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Gender getGender() {
+            return gender;
+        }
+
+        public static List<Employee> getPersons() {
+            return Arrays.asList(
+                    new Employee(1, "Jake", Gender.MALE),
+                    new Employee(2, "Jack", Gender.MALE),
+                    new Employee(3, "Jane", Gender.FEMALE),
+                    new Employee(4, "Jade", Gender.MALE),
+                    new Employee(5, "Jenny", Gender.FEMALE),
+                    new Employee(6, "Jason", Gender.MALE)
+            );
+        }
     }
 }
