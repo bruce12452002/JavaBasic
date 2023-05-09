@@ -46,7 +46,7 @@ public class MapInit {
 
     private static void initMap4() {
         System.out.println("initMap4");
-        Stream.of("aa", "bb").collect(Collectors.toMap(Function.identity(), a -> a.charAt(0))) // 通常是 Map 裡有物件
+        Stream.of("aa", "bb").collect(Collectors.toMap(Function.identity(), a -> a.charAt(0))) // 使用時通常是 Map 裡有物件
                 .forEach((k, v) -> System.out.println(k + "=" + v));
     }
 
@@ -97,7 +97,7 @@ public class MapInit {
                         Employee::getGender,
                         Employee::getName,
                         (oldV, newV) -> String.join(", ", oldV, newV), // KEY 衝突會用到
-                        TreeMap::new
+                        TreeMap::new  // toMap 有三種，這個參數可不用，預設是 HashMap
                 ));
         System.out.println(map);
     }
