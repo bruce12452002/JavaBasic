@@ -100,6 +100,9 @@ public class MapInit {
                         TreeMap::new  // toMap 有三種，這個參數可不用，預設是 HashMap
                 ));
         System.out.println(map);
+
+        // Collectors.toConcurrentMap 用法和 toMap 一樣
+        // 差在預設是 ConcurrentHashMap，如果使用第四個參數時一定要繼承 ConcurrentMap
     }
 
     private static class Employee {
