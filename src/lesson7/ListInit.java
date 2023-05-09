@@ -45,6 +45,8 @@ public class ListInit {
         System.out.println("initList4");
         Stream.of("aa", "bb").collect(Collectors.toList()).forEach(System.out::println);
         Stream.of("aa", "bb").toList().forEach(System.out::println); // Java 16
+
+        LinkedList<String> list = Stream.of("aa", "bb").collect(Collectors.toCollection(LinkedList::new));
     }
 
     private static void initList5() {

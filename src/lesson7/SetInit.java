@@ -46,6 +46,8 @@ public class SetInit {
         System.out.println("initSet4");
         Stream.of("aa", "bb").collect(Collectors.toSet()).forEach(System.out::println);
 //        Stream.of("aa", "bb").toSet().forEach(System.out::println); // 並沒有 toSet()
+
+        LinkedHashSet<String> set = Stream.of("aa", "bb").collect(Collectors.toCollection(LinkedHashSet::new));
     }
 
     private static void initSet5() {
