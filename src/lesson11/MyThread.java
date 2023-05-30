@@ -23,7 +23,7 @@ public class MyThread extends Thread {
         MyThread m2 = new MyThread();
         m2.setName("m2");
 
-        m1.start();
+        m1.start(); // 如果真的有 start 方法，就不會調用 run 方法了，且只有 main 執行緒會調用 start 方法
         m2.start();
     }
 
