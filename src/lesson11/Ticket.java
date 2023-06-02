@@ -1,28 +1,35 @@
 package lesson11;
 
+import java.util.concurrent.TimeUnit;
+
 public class Ticket implements Runnable {
-    private /*static*/ int ticket = 10;
+    private int ticket = 10;
 
     @Override
     public void run() {
         for (var i = 10; i > 0; i--) {
-            if (ticket > 0) {
-                System.out.println(Thread.currentThread().getName() + "=>" + ticket--);
+            try {
+                TimeUnit.MILLISECONDS.sleep(500);
+                if (ticket > 0) {
+                    System.out.println(Thread.currentThread().getName() + "=>" + ticket--);
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
     }
 
     public static void main(String[] args) {
         // 不同的 Ticket 不一定可以共享票
-        differentTicket();
+//        differentTicket();
 
         // 同個 Ticket 可以共享票
-//        sameTicket();
+        sameTicket();
     }
 
     private static void differentTicket() {
         // new Ticket() 3 次，所以票也是 3 倍
-        // 這種寫法可將 ticket 改成 static，這樣子的變通也是一種改法
+        // 這種寫法可將 ticket 改成 static，會發現有問題，因為有可能同一個時間點，多個執行緒去拿到 ticket 且都 > 0，但 ticket-- 時就會多了
         Thread t1 = new Thread(new Ticket());
         Thread t2 = new Thread(new Ticket());
         Thread t3 = new Thread(new Ticket());
