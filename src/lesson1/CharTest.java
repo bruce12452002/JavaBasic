@@ -17,5 +17,12 @@ public class CharTest {
         System.out.println(c2);
         System.out.println(c3);
         System.out.println((char) 65);
+
+        // \b backspace 刪除一個字
+        // \r 回最左邊並清空，也就是 \r 左邊所有的字都會清空
+        // \n 換行
+        System.out.println("ab\bc"); // ac
+        System.out.println("ab\rc"); // c
+        System.out.println("ab\nc"); // ab換行c
     }
 }
