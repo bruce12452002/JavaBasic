@@ -59,12 +59,12 @@ public class PrimitiveTest {
         System.out.println();
 
         System.out.println("尾數 LFD");
-        // L F D 大小寫均可
+        // 預設為 int，LFD 大小寫均可，都基本型態可以不用 LFD，但 wrapper 類別就一定要有 LFD
         long x = 1L;
         float y = 1F;
         double z = 1D;
 
-        // 預設為 double
+        // 預設為 double，不管是不是基本型態都要寫 F
         //float f1 = 1.0;
         float f2 = 1.0F;
         float f3 = (float) 1.0;
@@ -114,4 +114,5 @@ public class PrimitiveTest {
         var boo = false;
         System.out.println(((Object) boo).getClass().getSimpleName());
     }
+
 }
