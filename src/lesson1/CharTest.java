@@ -17,6 +17,7 @@ public class CharTest {
         System.out.println(c2);
         System.out.println(c3);
         System.out.println((char) 65);
+        System.out.println('\101'); // 8 進位
 
         // \b backspace 刪除一個字
         // \r 回最左邊，但如果要繼續輸入文字，\r 左邊所有的字都會清空
