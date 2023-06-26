@@ -1,5 +1,8 @@
 package lesson1;
 
+/**
+ * https://docs.oracle.com/javase/tutorial/java/data/characters.html
+ */
 public class CharTest {
     /**
      * 多行註解
