@@ -10,6 +10,7 @@ public class Chapter4ChickenAndRabbit {
     public static void main(String[] args) {
         h2_4_3_one();
 //        h2_4_3_two();
+//        chatgpt();
     }
 
     /**
@@ -69,4 +70,30 @@ public class Chapter4ChickenAndRabbit {
         System.out.println("雞有" + x + "隻，兔有" + y + "隻");
         scanner.close();
     }
+
+    private static void chatgpt() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("請輸入總隻數: ");
+        int totalAnimals = scanner.nextInt();
+        System.out.print("請輸入總腳數: ");
+        int totalLegs = scanner.nextInt();
+
+        int chickenCount = 0;
+        int rabbitCount = 0;
+
+        // i為雞；j為兔
+        for (int i = 0; i <= totalAnimals; i++) {
+            int j = totalAnimals - i;
+            if (2 * i + 4 * j == totalLegs) {
+                chickenCount = i;
+                rabbitCount = j;
+                break;
+            }
+        }
+
+        System.out.println("雞有" + chickenCount + "隻，兔有" + rabbitCount + "隻");
+        scanner.close();
+    }
+
+
 }
