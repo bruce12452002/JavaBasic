@@ -1,9 +1,26 @@
 package homework;
 
+import java.util.Scanner;
+
 public class Chapter5 {
     public static void main(String[] args) {
-        hw5_12(5);
+        hw5_2_2();
+//        hw5_12(5);
 //        hw5_18();
+    }
+
+    private static void hw5_2_2() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("請輸入大於 0 的數字: ");
+        final int NUM = scanner.nextInt();
+        if (NUM % 5 == 0) {
+            if (NUM % 6 == 0) {
+                System.out.println("yes");
+            }
+        } else {
+            System.out.println("no");
+        }
+        scanner.close();
     }
 
     //      *
