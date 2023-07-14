@@ -4,9 +4,41 @@ import java.util.Scanner;
 
 public class Chapter5 {
     public static void main(String[] args) {
-        hw5_2_2();
+        ex5_2_4(93);
+//        hw5_2_2();
 //        hw5_12(5);
 //        hw5_18();
+    }
+
+    /**
+     * 假設某加油站的工讀生每個月打工的薪資，可以依照下列方式計算：
+     * 60個小時之內，基本時薪為每小時100元
+     * 61~75個小時，以基本時薪的1.5倍計算
+     * 76個小時以後以基本時薪的2.5倍計算
+     * 例如，如果工作時數為80小時，則薪資為
+     * 60*100 + 15*100*1.5 + 5*100*2.5 = 9500元。
+     * 試撰寫一程式，設定某工讀生該月的工作時數為93小時，然後計算實領
+     * 的薪資。
+     * 93 -> 12750.0
+     */
+    private static void ex5_2_4(double hour) {
+        double salary = 0;
+        final double HOUR_SALARY = 100;
+        if (hour >= 60) {
+            salary += 60 * HOUR_SALARY;
+
+            if (hour >= 75) {
+                double temp = 0;
+                if (hour - 75 > 0) {
+                    temp = hour - 75;
+                }
+                salary += ((hour - 60) - temp) * HOUR_SALARY * 1.5;
+            }
+            if (hour >= 76) {
+                salary += (hour - 75) * HOUR_SALARY * 2.5;
+            }
+        }
+        System.out.println(salary);
     }
 
     private static void hw5_2_2() {
