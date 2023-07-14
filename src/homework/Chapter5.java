@@ -32,7 +32,7 @@ public class Chapter5 {
                 if (hour - 75 > 0) {
                     temp = hour - 75;
                 }
-                salary += ((hour - 60) - temp) * HOUR_SALARY * 1.5;
+                salary += (hour - 60 - temp) * HOUR_SALARY * 1.5;
             }
             if (hour >= 76) {
                 salary += (hour - 75) * HOUR_SALARY * 2.5;
