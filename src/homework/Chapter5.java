@@ -7,7 +7,8 @@ public class Chapter5 {
 //        hw5_2_2();
 //        ex5_2_4(93);
 //        System.out.println(hw5_3(666, 8));
-        System.out.println(hw5_4(123));
+        System.out.println(hw5_4(77));
+        System.out.println(077); // 直接轉8進制
 //        hw5_12(5);
 //        hw5_18();
     }
@@ -77,28 +78,20 @@ public class Chapter5 {
 
         while (true) {
             if (i < ten) {
-//                do {
-//                    ten /= 10;
-//                    int left = (int) (i / ten); // 數字的最左邊
-//                    count += left * j;
-//                    j /= EIGHT;
-//                } while (j / EIGHT == 1);
-
                 while (j / EIGHT != 0) {
                     ten /= 10;
                     int left = (int) (i / ten); // 數字的最左邊
-                    i -= ten; // todo 減的時候必需將最左邊刪除
+                    i -= left * ten; // 將最左邊刪除
                     count += left * j;
                     j /= EIGHT;
                 }
-
                 break;
             } else {
                 ten *= 10;
                 j *= EIGHT;
             }
         }
-        return count;
+        return count + i;
     }
 
     private static void hw5_2_2() {
