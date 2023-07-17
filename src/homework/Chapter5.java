@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class Chapter5 {
     public static void main(String[] args) {
-        ex5_2_4(93);
 //        hw5_2_2();
+//        ex5_2_4(93);
+//        System.out.println(hw5_3(666, 8));
+        System.out.println(hw5_4(123));
 //        hw5_12(5);
 //        hw5_18();
     }
@@ -39,6 +41,64 @@ public class Chapter5 {
             }
         }
         System.out.println(salary);
+    }
+
+    /**
+     * 轉 x 進制
+     */
+    private static int hw5_3(int i, final int CARRY) {
+        System.out.println(Integer.toOctalString(i));
+        System.out.println("=====");
+        int ten = 1;
+        int result = 0;
+        while (i % CARRY != 0) {
+//            System.out.println(i % CARRY);
+
+            // 將數字倒轉
+            result += i % CARRY * ten;
+            ten *= 10;
+
+            i /= CARRY;
+        }
+        return result;
+    }
+
+    /**
+     * 8 轉 10 進制
+     */
+    private static int hw5_4(int i) {
+        System.out.println(Integer.parseInt(String.valueOf(i), 8));
+        System.out.println("=====");
+
+        long ten = 10;
+        int j = 1; // 8 的幾次方的結果，一開始是 8 的 0 次方
+        final int EIGHT = 8;
+        int count = 0;
+
+        while (true) {
+            if (i < ten) {
+//                do {
+//                    ten /= 10;
+//                    int left = (int) (i / ten); // 數字的最左邊
+//                    count += left * j;
+//                    j /= EIGHT;
+//                } while (j / EIGHT == 1);
+
+                while (j / EIGHT != 0) {
+                    ten /= 10;
+                    int left = (int) (i / ten); // 數字的最左邊
+                    i -= ten; // todo 減的時候必需將最左邊刪除
+                    count += left * j;
+                    j /= EIGHT;
+                }
+
+                break;
+            } else {
+                ten *= 10;
+                j *= EIGHT;
+            }
+        }
+        return count;
     }
 
     private static void hw5_2_2() {
