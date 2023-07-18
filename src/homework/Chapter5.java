@@ -9,7 +9,9 @@ public class Chapter5 {
 //        System.out.println(hw5_3(666, 8));
 //        System.out.println(hw5_4(77));
 //        System.out.println(077); // 直接轉8進制
-        hw5_8('A');
+//        hw5_8('A');
+//        hw5_11(3, 6, 9);
+        hw5_13(3456789);
 //        hw5_12(5);
 //        hw5_18();
     }
@@ -105,6 +107,29 @@ public class Chapter5 {
         }
     }
 
+    private static void hw5_11(int a, int b, int c) {
+        int j = a * b;
+        int k = a * c;
+        int l = b * c;
+
+        if (j < k && j < l) {
+            System.out.println("最小與次小的數為" + a + " " + b + ", 兩數相乘結果為" + j);
+        } else if (k < j && k < l) {
+            System.out.println("最小與次小的數為" + a + " " + c + ", 兩數相乘結果為" + k);
+        } else {
+            System.out.println("最小與次小的數為" + b + " " + c + ", 兩數相乘結果為" + l);
+        }
+    }
+
+    private static void hw5_13(int i) {
+        int count = 1;
+        while (i / 10 != 0) {
+            count *= i % 10;
+            i /= 10;
+        }
+        System.out.println(count * i);
+    }
+
     private static void hw5_2_2() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("請輸入大於 0 的數字: ");
@@ -157,3 +182,4 @@ public class Chapter5 {
         }
     }
 }
+
