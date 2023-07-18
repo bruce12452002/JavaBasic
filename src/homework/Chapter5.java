@@ -7,8 +7,9 @@ public class Chapter5 {
 //        hw5_2_2();
 //        ex5_2_4(93);
 //        System.out.println(hw5_3(666, 8));
-        System.out.println(hw5_4(77));
-        System.out.println(077); // 直接轉8進制
+//        System.out.println(hw5_4(77));
+//        System.out.println(077); // 直接轉8進制
+        hw5_8('A');
 //        hw5_12(5);
 //        hw5_18();
     }
@@ -92,6 +93,16 @@ public class Chapter5 {
             }
         }
         return count + i;
+    }
+
+    private static void hw5_8(char c) {
+        if (c >= 65 && c <= 90) {
+            System.out.println("您輸入的第一個字元經大小寫轉換後為:" + (char) (c + 32));
+        } else if (c >= 97 && c <= 122) {
+            System.out.println("您輸入的第一個字元經大小寫轉換後為:" + (char) (c - 32));
+        } else {
+            System.out.println("您所輸入的並不是英文字母");
+        }
     }
 
     private static void hw5_2_2() {
