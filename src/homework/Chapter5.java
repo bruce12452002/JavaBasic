@@ -7,11 +7,11 @@ public class Chapter5 {
 //        hw5_2_2();
 //        ex5_2_4(93);
 //        System.out.println(hw5_3(666, 8));
-//        System.out.println(hw5_4(77));
+        hw5_4(77);
 //        System.out.println(077); // 直接轉8進制
 //        hw5_8('A');
 //        hw5_11(3, 6, 9);
-        hw5_13(3456789);
+//        hw5_13(3456789);
 //        hw5_12(5);
 //        hw5_18();
     }
@@ -70,31 +70,22 @@ public class Chapter5 {
     /**
      * 8 轉 10 進制
      */
-    private static int hw5_4(int i) {
+    private static void hw5_4(int i) {
         System.out.println(Integer.parseInt(String.valueOf(i), 8));
         System.out.println("=====");
-
-        long ten = 10;
-        int j = 1; // 8 的幾次方的結果，一開始是 8 的 0 次方
         final int EIGHT = 8;
+        int j = 1; // 8的幾次方，預設為 8 的 0 次方
         int count = 0;
 
-        while (true) {
-            if (i < ten) {
-                while (j / EIGHT != 0) {
-                    ten /= 10;
-                    int left = (int) (i / ten); // 數字的最左邊
-                    i -= left * ten; // 將最左邊刪除
-                    count += left * j;
-                    j /= EIGHT;
-                }
-                break;
-            } else {
-                ten *= 10;
-                j *= EIGHT;
-            }
+        while (i / 10 != 0) {
+//            System.out.println(i % 10);
+            count += (i % 10) * j;
+            j *= EIGHT;
+            i /= 10;
         }
-        return count + i;
+//        System.out.println(i);
+        count += i * j;
+        System.out.println(count);
     }
 
     private static void hw5_8(char c) {
