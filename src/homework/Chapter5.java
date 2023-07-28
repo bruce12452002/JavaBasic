@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Chapter5 {
     public static void main(String[] args) {
 //        hw5_2_2();
-//        ex5_2_4(93);
+        ex5_2_4(93);
 //        System.out.println(hw5_3(666, 8));
-        hw5_4(77);
+//        hw5_4(77);
 //        System.out.println(077); // 直接轉8進制
 //        hw5_8('A');
 //        hw5_11(3, 6, 9);
@@ -30,19 +30,23 @@ public class Chapter5 {
     private static void ex5_2_4(double hour) {
         double salary = 0;
         final double HOUR_SALARY = 100;
-        if (hour >= 60) {
-            salary += 60 * HOUR_SALARY;
 
-            if (hour >= 75) {
-                double temp = 0;
-                if (hour - 75 > 0) {
-                    temp = hour - 75;
-                }
-                salary += (hour - 60 - temp) * HOUR_SALARY * 1.5;
+        if (hour <= 60) {
+            salary += hour * HOUR_SALARY;
+        } else {
+            salary += 60 * HOUR_SALARY;
+        }
+
+        if (hour >= 61) {
+            double temp = 0;
+            if (hour - 75 > 0) {
+                temp = hour - 75;
             }
-            if (hour >= 76) {
-                salary += (hour - 75) * HOUR_SALARY * 2.5;
-            }
+            salary += (hour - 60 - temp) * HOUR_SALARY * 1.5;
+        }
+
+        if (hour >= 76) {
+            salary += (hour - 75) * HOUR_SALARY * 2.5;
         }
         System.out.println(salary);
     }
