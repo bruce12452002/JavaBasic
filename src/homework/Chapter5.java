@@ -16,9 +16,10 @@ public class Chapter5 {
 //        hw5_14();
 //        hw5_15(9, 2);
 //        hw5_16(7);
-        hw5_17();
+//        hw5_17();
 //        hw5_18();
 //        hw5_19(6);
+        hw5_20();
     }
 
     /**
@@ -321,6 +322,52 @@ public class Chapter5 {
             count += multiply;
         }
         System.out.println(count);
+    }
+
+    private static void hw5_20() {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("請輸入選擇(1)矩形(2)正三角形(3)倒三角形(4)菱形(請輸入奇數)：");
+            int shape = scanner.nextInt();
+
+            if (shape == 1) {
+                System.out.println("輸入寬為：");
+                int loop = scanner.nextInt(); // 迴圈數
+
+                System.out.println("輸入高為：");
+                int star = scanner.nextInt(); // 星星數
+
+                for (int i = 1; i <= loop; i++) {
+                    for (int j = 1; j <= star; j++) {
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+            } else {
+                System.out.println("請輸入高度：");
+                int high = scanner.nextInt();
+                if (shape == 2) {
+                    for (int i = 1; i <= high; i++) {
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                } else if (shape == 3) {
+                    for (int i = 1; i <= high; i++) {
+                        for (int j = 1; j <= high + 1 - i; j++) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                } else if (shape == 4) {
+                    hw5_16(high);
+                    break;
+                }
+            }
+        }
+        scanner.close();
     }
 }
 
