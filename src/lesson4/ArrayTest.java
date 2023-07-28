@@ -30,7 +30,8 @@ public class ArrayTest {
 //        sort();
 //        passByReference();
 //        passByValue();
-        dim2();
+//        dim2();
+        dim2Special();
     }
 
     private static void sort() {
@@ -103,6 +104,13 @@ public class ArrayTest {
 
         // 方法四
         Arrays.stream(arr2).forEach(a -> System.out.println(Arrays.toString(a)));
+    }
+
+    private static void dim2Special() {
+        int[][] arr2 = new int[3][]; // 可以先宣告 row 就好；但不可只宣告 column
+        arr2[0] = new int[5];
+        arr2[1] = new int[]{1, 2};
+//        arr2[2] = {1, 2}; // 這種方式不能省略 new int[]
     }
 
     private static void fillArray() {
