@@ -230,7 +230,7 @@ public class Chapter5 {
      * 想印的行數：4
      * 行 1 2 3 4
      * 空 3 2 1 0  --> 想印的行數 - 行
-     * 星 1 3 5 7  --> 行 * 2 - 1
+     * 星 1 3 5 7  --> 行 * 2 - 1 或 行+(行-1)
      * <p>
      * 下三角形：
      * 想印的行數：4 - 1
@@ -246,7 +246,7 @@ public class Chapter5 {
             for (int j = 1; j <= line - i; j++) {
                 System.out.print(" ");
             }
-            for (int k = 1; k <= i * 2 - 1; k++) {
+            for (int k = 1; k <= i + i - 1; k++) {
                 System.out.print("*");
             }
             System.out.println();
