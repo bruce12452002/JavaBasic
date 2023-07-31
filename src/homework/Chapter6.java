@@ -1,11 +1,14 @@
 package homework;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Chapter6 {
     public static void main(String[] args) {
 //        ex6_1_2();
-        hw6_1();
+//        hw6_1();
+//        hw6_4();
+        hw6_4Special();
     }
 
     private static void ex6_1_2() {
@@ -47,4 +50,41 @@ public class Chapter6 {
 
         scanner.close();
     }
+
+    private static void hw6_4() {
+        int[] data = {34, 5, 10, 20, 30};
+        for (int i = 0; i < data.length / 2; i++) {
+            int lastIndex = data.length - 1 - i;
+            int temp = data[i];
+            data[i] = data[lastIndex];
+            data[lastIndex] = temp;
+        }
+        System.out.println(Arrays.toString(data));
+    }
+
+    /**
+     * 數字倒轉
+     */
+    private static void hw6_4Special() {
+        int data = 3456;
+        int result = 0;
+        long base = 1;
+
+        while (base / data == 0) {
+            base *= 10;
+        }
+//        System.out.println(base);
+        base /= 10;
+
+
+        while (data % 10 != 0) {
+//            System.out.println(data % 10);
+            result += data % 10 * base;
+            base /= 10;
+            data /= 10;
+        }
+        System.out.println(result);
+    }
+
+
 }
