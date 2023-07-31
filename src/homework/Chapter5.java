@@ -10,7 +10,7 @@ public class Chapter5 {
 //        hw5_4(77);
 //        System.out.println(077); // 直接轉8進制
 //        hw5_8('A');
-//        hw5_11(3, 6, 9);
+        hw5_11(9, 9, 3);
 //        hw5_12(5);
 //        hw5_13(3456789);
 //        hw5_14();
@@ -19,7 +19,7 @@ public class Chapter5 {
 //        hw5_17();
 //        hw5_18();
 //        hw5_19(6);
-        hw5_20();
+//        hw5_20();
     }
 
     /**
@@ -113,9 +113,9 @@ public class Chapter5 {
         int k = a * c;
         int l = b * c;
 
-        if (j < k && j < l) {
+        if (j <= k && j <= l) {
             System.out.println("最小與次小的數為" + a + " " + b + ", 兩數相乘結果為" + j);
-        } else if (k < j && k < l) {
+        } else if (k <= j && k <= l) {
             System.out.println("最小與次小的數為" + a + " " + c + ", 兩數相乘結果為" + k);
         } else {
             System.out.println("最小與次小的數為" + b + " " + c + ", 兩數相乘結果為" + l);
