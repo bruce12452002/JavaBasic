@@ -1,8 +1,11 @@
 package homework;
 
+import java.util.Scanner;
+
 public class Chapter6 {
     public static void main(String[] args) {
-        ex6_1_2();
+//        ex6_1_2();
+        hw6_1();
     }
 
     private static void ex6_1_2() {
@@ -18,5 +21,30 @@ public class Chapter6 {
         }
         System.out.println();
         System.out.println(count);
+    }
+
+    private static void hw6_1() {
+        Scanner scanner = new Scanner(System.in);
+        int[] ten = new int[10];
+        System.out.println("請輸入 10 個整數：");
+
+        for (int i = 0; i < ten.length; i++) {
+            System.out.println("第" + (i + 1) + "個整數：");
+            ten[i] = scanner.nextInt();
+        }
+
+        int count60 = 0;
+        float sum = 0;
+        for (int i : ten) {
+            if (i > 60) {
+                count60++;
+            }
+            sum += i;
+        }
+        System.out.println("陣列中大於60的有" + count60 + "個");
+        System.out.println("總合為" + (int) sum);
+        System.out.println("平均值為" + sum / ten.length);
+
+        scanner.close();
     }
 }
