@@ -33,17 +33,17 @@ public class Chapter6 {
             ten[i] = scanner.nextInt();
         }
 
-        int count60 = 0;
-        float sum = 0;
+        double count60 = 0;
+        int sum = 0;
         for (int i : ten) {
             if (i > 60) {
                 count60++;
+                sum += i;
             }
-            sum += i;
         }
-        System.out.println("陣列中大於60的有" + count60 + "個");
-        System.out.println("總合為" + (int) sum);
-        System.out.println("平均值為" + sum / ten.length);
+        System.out.println("陣列中大於60的有" + (int) count60 + "個");
+        System.out.println("總合為" + sum);
+        System.out.println("平均值為" + sum / count60);
 
         scanner.close();
     }
