@@ -30,7 +30,7 @@ public class Chapter4ChickenAndRabbit {
         System.out.print("請輸入總腳數: ");
         int totalLegs = scanner.nextInt();
 
-        // 先算=右邊的數字，26-32
+        // 先算=右邊的數字，26-32; =左邊是固定的
         int c = totalLegs - 4 * totalAnimals;
         if (-c % 2 != 0) {
             System.out.println("無法算出");
@@ -67,7 +67,7 @@ public class Chapter4ChickenAndRabbit {
             return;
         }
 
-        // 先算=右邊的數字，26-16
+        // 先算=右邊的數字，26-16; =左邊是固定的
         int y = (totalLegs - 2 * totalAnimals) / 2;
         int x = totalAnimals - y;
         System.out.println("雞有" + x + "隻，兔有" + y + "隻");
