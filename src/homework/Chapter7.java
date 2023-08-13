@@ -1,5 +1,7 @@
 package homework;
 
+import java.util.Scanner;
+
 public class Chapter7 {
     public static void main(String[] args) {
 //        System.out.println(ex7_3_1(10));
@@ -8,7 +10,8 @@ public class Chapter7 {
 //        hw7_6();
 //        System.out.println(hw7_7(5));
 //        hw7_9(2, 3, 6);
-        hw7_12(50);
+//        hw7_12(50);
+        hw7_13_and_14();
     }
 
     /**
@@ -133,5 +136,32 @@ public class Chapter7 {
             }
         }
         System.out.println(count);
+    }
+
+    /**
+     * 一隻蝸牛爬一顆10公尺的大樹，白天
+     * 往上爬2公尺，但晚上會掉下1公尺，請問要
+     * 幾天才可爬到樹頂？請設計一程式，利用
+     * do while迴圈指令來解決蝸牛爬樹問題
+     */
+    private static void hw7_13_and_14() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("請輸入樹高");
+        int treeHigh = scanner.nextInt();
+
+        int day = 1;
+        float high = 0;
+        do {
+            high += 2;
+            System.out.println("第" + day + "天的白天爬到：" + high);
+            if (high >= treeHigh) break;
+
+            high -= 1;
+            System.out.println("晚上下降成：" + high);
+            System.out.println("‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐");
+            day++;
+        } while (true);
+        System.out.println("蝸牛一共花了：" + day + "天爬到頂。");
+        scanner.close();
     }
 }
