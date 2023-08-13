@@ -5,6 +5,10 @@ public class PrimitiveTest {
         System.out.print("haha");
         System.out.println("hehe\n");
 
+        System.out.println("乘除也會有使用圓括號的時候，如 BMI 值");
+        System.out.println(25 / 5 * 5);
+        System.out.println(25 / (5 * 5));
+
         System.out.println("宣告變數");
         int hi = 4;
         System.out.println(hi);
