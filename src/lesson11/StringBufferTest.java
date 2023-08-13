@@ -1,7 +1,5 @@
 package lesson11;
 
-import java.util.concurrent.TimeUnit;
-
 public class StringBufferTest {
     public static void main(String[] args) throws InterruptedException {
 //        StringBuffer sb = new StringBuffer();
