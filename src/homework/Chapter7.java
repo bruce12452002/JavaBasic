@@ -35,21 +35,19 @@ public class Chapter7 {
     /**
      * 找出某個整數的質數
      */
-    private static int hw7_1(int n) {
-        if (n == 1) return 1;
-
-        boolean prime = true;
-        for (int i = 2; i < n; i++) {
-            if (n % i == 0) {
-                prime = false;
-                break;
+    private static void hw7_1(int n) {
+        for (int i = 2; i <= n; i++) {
+            boolean prime = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+            if (prime) {
+                System.out.print(i + " ");
             }
         }
-
-        if (prime) {
-            System.out.print(n + " ");
-        }
-        return hw7_1(n - 1);
     }
 
     /**
