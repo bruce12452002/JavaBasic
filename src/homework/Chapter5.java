@@ -10,9 +10,10 @@ public class Chapter5 {
 //        hw5_4(77);
 //        System.out.println(077); // 直接轉8進制
 //        hw5_8('A');
-        hw5_11(9, 9, 3);
+//        hw5_11(9, 9, 3);
 //        hw5_12(5);
-//        hw5_13(3456789);
+        hw5_13_while(3456789);
+        hw5_13_for(3456789);
 //        hw5_14();
 //        hw5_15(9, 2);
 //        hw5_16(7);
@@ -122,9 +123,18 @@ public class Chapter5 {
         }
     }
 
-    private static void hw5_13(int i) {
+    private static void hw5_13_while(int i) {
         int count = 1;
         while (i % 10 != 0) {
+            count *= i % 10;
+            i /= 10;
+        }
+        System.out.println(count);
+    }
+
+    private static void hw5_13_for(int i) {
+        int count = 1;
+        for (; i % 10 != 0; ) {
             count *= i % 10;
             i /= 10;
         }
