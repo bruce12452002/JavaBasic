@@ -1,5 +1,6 @@
 package homework;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Chapter7 {
@@ -7,11 +8,11 @@ public class Chapter7 {
 //        System.out.println(ex7_3_1(10));
 //        System.out.println(ex7_3_2(5));
 //        hw7_1(20);
-//        hw7_6_desc();
-//        hw7_6_asc();
+        hw7_6_desc();
+        hw7_6_asc();
 //        System.out.println(hw7_7(5));
 //        hw7_9(2, 3, 6);
-        hw7_12_a(50);
+//        hw7_12_a(50);
 //        hw7_12_b(50);
 //        hw7_13_and_14();
     }
@@ -80,6 +81,7 @@ public class Chapter7 {
             }
             System.out.print(primeArray[i] + " ");
         }
+        System.out.println("------------------------------------------");
     }
 
     private static void hw7_6_asc() {
@@ -99,9 +101,10 @@ public class Chapter7 {
             }
         }
 
+
         // 印出質數，每 5 個換行
-        for (int i = 0, j = 0; i < primeArray.length; i++, j++) {
-            if (j % 5 == 0 && j != 0) {
+        for (int i = 0; i < primeArray.length; i++) {
+            if (i % 5 == 0 && i != 0) {
                 System.out.println();
             }
             System.out.print(primeArray[i] + " ");
