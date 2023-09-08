@@ -7,11 +7,13 @@ public class Chapter7 {
 //        System.out.println(ex7_3_1(10));
 //        System.out.println(ex7_3_2(5));
 //        hw7_1(20);
-//        hw7_6();
+//        hw7_6_desc();
+//        hw7_6_asc();
 //        System.out.println(hw7_7(5));
 //        hw7_9(2, 3, 6);
-//        hw7_12(50);
-        hw7_13_and_14();
+        hw7_12_a(50);
+//        hw7_12_b(50);
+//        hw7_13_and_14();
     }
 
     /**
@@ -54,7 +56,7 @@ public class Chapter7 {
      * 使用迴圈設計一個程式，找出2~100 中所有的質數，每印
      * 出 5 個質數後換行顯示
      */
-    private static void hw7_6() {
+    private static void hw7_6_desc() {
         int data = 100;
         int index = 0;
         int[] primeArray = new int[data / 4];
@@ -73,6 +75,32 @@ public class Chapter7 {
 
         // 印出質數，每 5 個換行
         for (int i = primeArray.length - 1, j = 0; i >= 0; i--, j++) {
+            if (j % 5 == 0 && j != 0) {
+                System.out.println();
+            }
+            System.out.print(primeArray[i] + " ");
+        }
+    }
+
+    private static void hw7_6_asc() {
+        int data = 100;
+        int index = 0;
+        int[] primeArray = new int[data / 4];
+        for (int i = 2; i <= data; i++) {
+            boolean prime = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+            if (prime) {
+                primeArray[index++] = i;
+            }
+        }
+
+        // 印出質數，每 5 個換行
+        for (int i = 0, j = 0; i < primeArray.length; i++, j++) {
             if (j % 5 == 0 && j != 0) {
                 System.out.println();
             }
@@ -119,7 +147,7 @@ public class Chapter7 {
      * 1^2‐2^2+3^2‐4^2+…+47^2‐48^2+49^2‐n^2的值
      * 傳 50 為 ‐1275
      */
-    private static void hw7_12(int n) {
+    private static void hw7_12_a(int n) {
         int count = 0;
         for (int i = 1, j = 1; i <= n; i++, j++) {
             int temp = i * i;
@@ -132,6 +160,27 @@ public class Chapter7 {
                     count = temp; // 第一次
                 }
             }
+        }
+        System.out.println(count);
+    }
+
+    /**
+     * 一開始 count 就是1，這樣就不用寫 else 裡的 if-else
+     */
+    private static void hw7_12_b(int n) {
+        int count = 1;
+        for (int i = 2, j = 1; i <= n; i++, j++) { // i 從 2 開始
+            int temp = i * i;
+
+            /*
+            if (j % 2 == 0) {
+                count += temp;
+            } else {
+                count -= temp;
+            }
+            */
+
+            count = j % 2 == 0 ? count + temp : count - temp;
         }
         System.out.println(count);
     }
