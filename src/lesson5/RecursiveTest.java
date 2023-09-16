@@ -10,7 +10,17 @@ public class RecursiveTest {
     }
 
     /**
-     * DFS，一路衝到最下面，再一層層往上爬
+     * DFS，一路到最下面，再由右邊一層層往上爬
+     * <p>
+     * *             5
+     * *          /     \
+     * *        4        3
+     * *      /  \      / \
+     * *     3    2    2   1
+     * *    / \  / \  / \
+     * *   2  1 1  0  1 0
+     * *  / \
+     * * 1  0 (所以給2時，會是 1 + 0)
      */
     private static int fib(int n, String s) {
         System.out.println(s);
