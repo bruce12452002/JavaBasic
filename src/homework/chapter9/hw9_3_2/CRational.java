@@ -22,8 +22,8 @@ public class CRational {
     }
 
     static CRational compare(CRational r1, CRational r2) {
-        float a = (float) r1.d / r1.n;
-        float b = (float) r2.d / r2.n;
+        float a = (float) r1.n / r1.d;
+        float b = (float) r2.n / r2.d;
         System.out.println(a + ":" + b);
         return a > b ? r1 : r2;
     }
