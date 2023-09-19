@@ -7,7 +7,7 @@ public class Num {
      */
     public static void main(String[] args) {
         Num num = new Num();
-        // 以下5個方法是錯，請修改正確
+        // 以下5個方法是錯的，請修改正確
         num.set1();
         num.set2();
         num.set3();
