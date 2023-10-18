@@ -5,10 +5,6 @@ public class PrimitiveTest {
         System.out.print("haha");
         System.out.println("hehe\n");
 
-        System.out.println("乘除也會有使用圓括號的時候，如 BMI 值");
-        System.out.println(25 / 5 * 5);
-        System.out.println(25 / (5 * 5));
-
         System.out.println("宣告變數");
         int hi = 4;
         System.out.println(hi);
@@ -34,6 +30,13 @@ public class PrimitiveTest {
         System.out.println(((Object) (++b)).getClass().getSimpleName());
         System.out.println(((Object) (b + 1)).getClass().getSimpleName());
         System.out.println();
+
+        System.out.println("減法");
+        System.out.println(1 - (-1)); // 2
+
+        System.out.println("乘除也會有使用圓括號的時候，如 BMI 值");
+        System.out.println(25 / 5 * 5);
+        System.out.println(25 / (5 * 5));
 
         System.out.println("除和餘數");
         System.out.println(10 / 4); // 2
