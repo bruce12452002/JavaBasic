@@ -120,6 +120,11 @@ public class PrimitiveTest {
 
         var boo = false;
         System.out.println(((Object) boo).getClass().getSimpleName());
+
+        // += -= *= /= %=
+        // a += 1 表示 a = a + (1)，有圓括號，其他依此類推
+        int five = 5, two = 2, one = 1;
+        System.out.println(five -= two - one);  // five = five - (two - one) ==> 4
     }
 
 }
